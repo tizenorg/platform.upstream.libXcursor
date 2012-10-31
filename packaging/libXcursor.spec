@@ -5,7 +5,6 @@ License:        MIT
 Summary:        Cursor management library
 Url:            http://www.x.org
 Group:          System Environment/Libraries
-#VCS: git:git://anongit.freedesktop.org/xorg/lib/libXcursor
 Source:         %{name}-%{version}.tar.bz2
 
 BuildRequires:  pkgconfig(x11)
@@ -32,7 +31,7 @@ libXcursor development package.
 %setup -q
 
 %build
-%reconfigure --disable-static
+%configure --disable-static
 make %{?_smp_mflags}
 
 %install
