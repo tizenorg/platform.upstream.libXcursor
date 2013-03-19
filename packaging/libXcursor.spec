@@ -4,7 +4,7 @@ Release:        1
 License:        MIT
 Summary:        Cursor management library
 Url:            http://www.x.org
-Group:          System Environment/Libraries
+Group:          Graphics/X Window System
 Source:         %{name}-%{version}.tar.bz2
 
 BuildRequires:  pkgconfig(x11)
@@ -47,6 +47,7 @@ mkdir -p %{buildroot}%{_datadir}/icons/default
 
 %files
 %defattr(-,root,root,-)
+%license COPYING
 %{_libdir}/libXcursor.so.1
 %{_libdir}/libXcursor.so.1.0.2
 %dir %{_datadir}/icons/default
