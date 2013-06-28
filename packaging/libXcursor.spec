@@ -6,6 +6,7 @@ Summary:        Cursor management library
 Url:            http://www.x.org
 Group:          Graphics/X Window System
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXcursor.manifest
 
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xfixes)
@@ -29,6 +30,7 @@ libXcursor development package.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static
@@ -46,6 +48,7 @@ mkdir -p %{buildroot}%{_datadir}/icons/default
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libXcursor.so.1
@@ -53,6 +56,7 @@ mkdir -p %{buildroot}%{_datadir}/icons/default
 %dir %{_datadir}/icons/default
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11/Xcursor
 %{_includedir}/X11/Xcursor/Xcursor.h
