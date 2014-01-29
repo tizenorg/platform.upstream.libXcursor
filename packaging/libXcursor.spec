@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXcursor
 Version:        1.1.13
 Release:        1
@@ -13,6 +15,10 @@ BuildRequires:  pkgconfig(xfixes)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 BuildRequires:  pkgconfig(xrender)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 This is  a simple library designed to help locate and load cursors.
