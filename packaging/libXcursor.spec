@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXcursor
-Version:        1.1.13
+Version:        1.1.14
 Release:        1
 License:        MIT
 Summary:        Cursor management library
@@ -39,7 +39,7 @@ libXcursor development package.
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-static
+%autogen --disable-static
 make %{?_smp_mflags}
 
 %install
